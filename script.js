@@ -105,31 +105,61 @@ class MainMenu extends Phaser.Scene {
     }
 
     create() {
-        this.cameras.main.fadeIn(1000);
+        this.cameras.main.fadeIn(500);
         let vampire = this.add.image(450, 300, 'vampire');
-
-        // this.input.on('pointerdown', () => {
-        //     this.cameras.main.fadeOut(1000, 0,0,0);
-        //     this.time.delayedCall(1000, () => {
-        //         this.scene.start('game studio');
-        //     })
-        // });
 
         // Main Menu Text
         // center align title and add animations to text
-        let title = this.add.text(60, 100, 'Vampire Adventures');
+        let title = this.add.text(40, 700, 'Vampire Adventures');
         title.setFontSize(40);
         title.setWordWrapWidth(200);
-        let newgame = this.add.text(60, 250, 'New Game');
-        newgame.setFontSize(30);
-        let loadgame = this.add.text(60, 325, 'Load Game');
-        loadgame.setFontSize(30);
-        let options = this.add.text(60, 400, 'Options');
-        options.setFontSize(30);
-        let exitgame = this.add.text(60, 475, 'Exit Game');
-        exitgame.setFontSize(30);
+        title.setAlign('center');
+        this.time.delayedCall(500, () => {
+            this.tweens.add({
+                targets: title,
+                y: 100,
+                duration: 350
+            });
+        });
 
-        this.time.delayedCall(10000, () => {
+        let newgame = this.add.text(60, 700, 'New Game');
+        newgame.setFontSize(30);
+        this.time.delayedCall(1000, () => {
+            this.tweens.add({
+                targets: newgame,
+                y: 250,
+                duration: 500, 
+            });
+        });
+        let loadgame = this.add.text(60, 700, 'Load Game');
+        loadgame.setFontSize(30);
+        this.time.delayedCall(1100, () => {
+            this.tweens.add({
+                targets: loadgame,
+                y: 325,
+                duration: 500, 
+            });
+        });
+        let options = this.add.text(60, 700, 'Options');
+        options.setFontSize(30);
+        this.time.delayedCall(1200, () => {
+            this.tweens.add({
+                targets: options,
+                y: 400,
+                duration: 500, 
+            });
+        });
+        let exitgame = this.add.text(60, 700, 'Exit Game');
+        exitgame.setFontSize(30);
+        this.time.delayedCall(1300, () => {
+            this.tweens.add({
+                targets: exitgame,
+                y: 475,
+                duration: 500, 
+            });
+        });
+
+        this.time.delayedCall(20000, () => {
             this.cameras.main.fadeOut(500, 0,0,0);
             this.scene.start('game studio');
         });
@@ -141,7 +171,7 @@ let config = {
     width: 600,
     height: 600,
     backgroundColor: 0x212121,
-    scene: [GameStudio, LoadingScreen, MainMenu]
+    scene: [MainMenu, LoadingScreen, GameStudio]
 }
 
 let game = new Phaser.Game(config);
