@@ -2,7 +2,7 @@ Vampire Adventure slideshow cinematic on Phaser.
 
 Key requirements for this assignment:
 - **3+ scenes**: Game Studio, Loading Screen, Main Menu
-- **2+ audio assetts**: Bloop sound for Game Studio, Dodo sound for Loading Screen
+- **2+ audio assetts**: Bloop sound for Game Studio, Dodo sound for Loading Screen. Audio was made using Audacity.
 - **2+ image assetts**: Game Studio Logo made in Google Drawing, Castle and Vampire made on pixalart.com
 - **2+ geometric shapes**: 3 rectangles were made to represent the three dots after "Loading"
 - **1+ logotype**: Game Studio Logo
