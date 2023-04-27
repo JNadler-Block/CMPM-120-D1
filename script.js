@@ -5,12 +5,18 @@ class GameStudio extends Phaser.Scene {
 
     preload() {
         this.load.image('studio name', 'assets/JN-B Text.png');
+        this.load.audio('bloop', 'audio assets/Bloopbloopbloopbloopbloop.wav');
     }
 
     create() {
         this.cameras.main.fadeIn(2000);
         let name = this.add.image(275, 300, 'studio name');
         name.scale = 0.5;
+
+        // Studio audio
+        let audio = this.sound.add('bloop', { loop: false });
+        audio.play();
+
         this.time.delayedCall(2000, () => {
             this.cameras.main.fadeOut(2000, 0,0,0);
         });
@@ -28,11 +34,16 @@ class LoadingScreen extends Phaser.Scene {
 
     preload() {
         this.load.image('castle', 'assets/Castle.png');
+        this.load.audio('dodo', 'audio assets/DodoDodoDodo.wav');
     }
 
     create() {
         this.cameras.main.fadeIn(1000);
         this.add.image(300, 300, 'castle');
+
+        // Loading audio
+        let audio = this.sound.add('dodo', { loop: false });
+        audio.play();
 
         //  Add graphics
         // this.graphics = this.add.graphics();
@@ -47,7 +58,6 @@ class LoadingScreen extends Phaser.Scene {
         let loading = this.add.text(400, 550, 'Loading');
         loading.setFontSize(30);
         //let loading = this.add.text(300, 500, 'Loading...', { fontFamily: 'PressStart2P'});
-        //console.log(loading);
 
         // Make 3 dots bounce
         this.tweens.add({
@@ -131,6 +141,9 @@ class MainMenu extends Phaser.Scene {
                 duration: 500, 
             });
         });
+        // newgame.setInteractive ({
+        //     font: 35,
+        // });
         let loadgame = this.add.text(60, 700, 'Load Game');
         loadgame.setFontSize(30);
         this.time.delayedCall(1100, () => {
