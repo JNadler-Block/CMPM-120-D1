@@ -171,7 +171,7 @@ let config = {
     width: 600,
     height: 600,
     backgroundColor: 0x212121,
-    scene: [MainMenu, LoadingScreen, GameStudio]
+    scene: [GameStudio, LoadingScreen, MainMenu]
 }
 
 let game = new Phaser.Game(config);
